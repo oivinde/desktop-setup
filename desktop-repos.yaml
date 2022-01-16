@@ -3,10 +3,10 @@
 - hosts: localhost
   become: yes
   tasks:
-   name: Import EPEL key
-   rpm_key:
-    state: present
-    key: "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
+   - name: Import EPEL key
+     rpm_key:
+      state: present
+      key: "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-{{ ansible_distribution_major_version }}"
     
   - name: Install EPEL Release repo on RHEL 8
     dnf:
